@@ -76,7 +76,12 @@ endmodule
 ````
 Full Subtractor
 ````
-
+module fs(A,B,Bin,diff,Borr);
+input A,B,Bin;
+output diff,Borr;
+assign diff = A ^ B ^ Bin;
+assign Borr = (~A & Bin) | (~A & B) | (B & Bin);
+endmodule
 ````
 **RTL Schematic**
 
@@ -88,16 +93,20 @@ Full Adder:
 
 Full Subtractor:
 
+<img width="818" height="476" alt="image" src="https://github.com/user-attachments/assets/7c662189-3fc8-4a6d-b897-33c12b5c1e67" />
 
 
 **Output Timing Waveform**
 
 Full Adder:
 
-<img width="1919" height="818" alt="image" src="https://github.com/user-attachments/assets/cdad7b02-927e-4555-a3a9-579fc33a66e5" />
+<img width="1919" height="606" alt="image" src="https://github.com/user-attachments/assets/d3649ff0-92e8-4fbc-b221-6cb7a1d9650e" />
 
 
 Full Subtractor:
+
+<img width="1918" height="450" alt="image" src="https://github.com/user-attachments/assets/4dbb31fb-1383-4791-933a-0025317ded63" />
+
 
 **Result:**
 
